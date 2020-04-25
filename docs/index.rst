@@ -8,12 +8,42 @@ Welcome to the Nerevu Employee Handbook!
 
 .. toctree::
    :maxdepth: 2
+   :hidden:
 
-   getting-started
+   getting-setup
    recommended-workflow
    git-and-github
    code-style
    new-projects
    resources
-   common-issues
-   finance
+   misc
+
+Your First Week at Nerevu
+-------------------------
+
+Ensure that you complete all of the following
+
+Access your new email account
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+`Login to Fastmail <https://www.fastmail.com/login>`_ with the following information:
+
+- username: <YOUR_FIRST_INITIAL><YOUR_LAST_NAME>@nerevu.com, e.g., `rcummings@nerevu.com`
+- password: separately emailed to you
+
+Change your password
+~~~~~~~~~~~~~~~~~~~~
+
+`Instructions <https://www.fastmail.com/help/account/password.html>`_
+
+Complete your Gusto profile
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Follow the instructions contained in the email with the subject `Let's get you set up with Nerevu`.
+
+Complete Paperwork
+~~~~~~~~~~~~~~~~~~
+
+- Sign and return your Employment Agreement
+- `Schedule a time <https://booking.nerevu.com/call-60m>`_ for your orientation and ensure you have your passport (or drivers license and birth certificate) present for the meeting
+- Add a headshot image and a 1 paragraph biography to Dropbox

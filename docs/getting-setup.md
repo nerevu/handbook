@@ -1,4 +1,4 @@
-# Getting Started
+# Getting Setup
 
 This section contains a several topics to help a new user get started during their first week at Nerevu.
 
@@ -44,30 +44,7 @@ pip install -r requirements.txt -r dev-requirements.txt
 
 ## Fastmail
 
-### Access your new account
-
-1. [Login to Fastmail](https://www.fastmail.com/login) with the following information
-
-- username: [first initial][last name]@nerevu.com, e.g., `rcummings@nerevu.com`
-- password: separately emailed to you
-
-2. [Change your password](https://www.fastmail.com/help/account/password.html)
-
-### Create App password to connect Fastmail to Cloze
-
-Fastmail comes under `Other Email` type in Cloze, and therefore giving access to a 3rd-party application, like Cloze, would need an app password that will be used by that application.
-
-1. From your Fastmail dashboard, open the dropdown menu at the top-left corner.
-2. Click on `Settings` and then on `Passwords & Security`.
-3. Look for `App Passwords` in this page and click on `Manage →`.
-4. Enter your password at the top of this page and click on `Unlock`.
-5. Click on `New App Password` button.
-6. Open the dropdown adjacent to `Name`, select `Custom` and enter `Cloze` in the input box.
-7. Make sure that the `Access` field is set to `Mails, Contacts & Calendars`.
-8. Click on `Generate Password` and make a temporary note of it, as it will not be displayed again once you click on `Done`.
-9. Use this password when you add this account in Cloze (Refer to [Linking various Accounts and Services to Cloze](#linking-various-accounts-and-services-to-cloze)).
-
-### Setup Fastmail Calendar Sync
+### Calendar Sync
 
 Nerevu Group uses Fastmail Calendar to keep everyone up to date on events that are happening. This section will show you how to sync your existing calendars so that they update Fastmail. In general, there are two options for syncing with your teammates:
 
@@ -105,7 +82,7 @@ KeePass is the Password Manager that Nerevu Group uses to keep usernames and pas
 
 1. Add keyfile to your [encrypted volume](#encrypted-volume-configuration)
 
-  - download `.key` keyfile (link will be given to you)
+  - download your `.key` keyfile (link will be given to you)
   - cut and paste the downloaded keyfile to your encrypted volume
   - make sure the keyfile does not exist anywhere else on your computer except in the encrypted volume (for security reasons)
 
@@ -129,7 +106,7 @@ You can see how to use it by looking at the [`commissioner-api` README](https://
 
 Visit [Ngrok's website](https://ngrok.com/) to learn more about it.
 
-## Linking various Accounts and Services to Cloze
+## Cloze
 
 See [this article for pictures](https://help.cloze.com/help/how-do-i-connect-dropbox-to-cloze)
 
@@ -147,7 +124,21 @@ See [this article for pictures](https://help.cloze.com/help/how-do-i-connect-dro
 7. Sign in to the service using Nerevu credentials.
 8. Review the permissions and click on `Allow`, when prompted.
 
-## Google Sheets API setup
+### Fastmail app password
+
+Fastmail comes under `Other Email` type in Cloze, and therefore giving access to a 3rd-party application, like Cloze, would need an app password that will be used by that application.
+
+1. From your Fastmail dashboard, open the dropdown menu at the top-left corner.
+2. Click on `Settings` and then on `Passwords & Security`.
+3. Look for `App Passwords` in this page and click on `Manage →`.
+4. Enter your password at the top of this page and click on `Unlock`.
+5. Click on `New App Password` button.
+6. Open the dropdown adjacent to `Name`, select `Custom` and enter `Cloze` in the input box.
+7. Make sure that the `Access` field is set to `Mails, Contacts & Calendars`.
+8. Click on `Generate Password` and make a temporary note of it, as it will not be displayed again once you click on `Done`.
+9. Use this password when you add this account in Cloze (Refer to [Linking various Accounts and Services to Cloze](#linking-various-accounts-and-services-to-cloze)).
+
+## Google Sheets API
 
 ### Enable Google Cloud Platform
 
@@ -184,10 +175,3 @@ See [this article for pictures](https://help.cloze.com/help/how-do-i-connect-dro
 3. Share the workbook with the `client_email` address and grant `Edit` permission.
 4. Uncheck `Notify People` since this email address is not handled by a human.
 5. Follow the respective API/library documentation for Google Sheets, for authentication and usage.
-
-## Other Useful Information
-
-### Time Management
-
-- Don't dwell on something too long. Just move to a different project.
-

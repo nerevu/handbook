@@ -1,7 +1,8 @@
 # Resources
 
-
 ## Recording Time
+
+- Don't dwell on something too long. Just move to a different task.
 
 ### Timely
 
@@ -18,7 +19,7 @@ When inputting hours worked, tags should be applied to every task we do, whether
 
 *NOTE: When using the `learning` tag, the work is general in nature unrelated to a specific project (e.g., functional programming), please use the `Internal` project. However, if the learning is in relation to a specific project you are working on (e.g., Flask Admin), please use that client project instead of `Internal`.*
 
-## Other
+## ERP
 
 ### Dropbox
 
@@ -31,7 +32,6 @@ When inputting hours worked, tags should be applied to every task we do, whether
 * [Where can I find my Cloze API key?](https://help.cloze.com/help/api-key)
 * [API documentation](https://api.cloze.com/api-docs/)
 * [Add GSuite and Dropbox Accounts](https://help.cloze.com/help/how-do-i-connect-dropbox-to-cloze)
-
 
 ### Fastmail
 

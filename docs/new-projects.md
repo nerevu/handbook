@@ -1,5 +1,7 @@
 # New Projects
 
+## Create a new Project
+
 Start new projects by following the steps in the README of a [Nerevu Cookiecutter](https://github.com/nerevu?q=cookiecutter) repo.
 
 ## ENV file

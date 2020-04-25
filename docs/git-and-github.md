@@ -1,6 +1,6 @@
 # Git and Github
 
-## Edit Notifications for Github
+## Github Notifications
 
 Add your work email address to github so that relevant notifications don't go to your personal inbox:
 
