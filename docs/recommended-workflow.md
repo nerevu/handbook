@@ -27,27 +27,29 @@ It's expected that you already do this each work morning for the previous work d
 
 #### contents
 
-##### Accomplishments
+```md
+# Accomplishments
 
 * Completed `foo` task
 * Learned `bar` skill
 * Updated documentation on `baz`
 
-##### Struggles / Issues / Concerns
+# Struggles / Issues / Concerns
 
 * Couldn't figure out how to do `xyz`
 * It takes too long to do `abc` on program `qrs`
 
-##### Future Plans
+# Future Plans
 
 * Complete `foo` and `bar` tasks
 * Learn `baz` skill
 * Updated documentation on `xyz`
 
-##### Questions / Requests
+# Questions / Requests
 
 * What is the proper way to `abc`?
 
-##### Recommendations
+# Recommendations
 
 * Process `abc` is inefficient because of `xyz`. We should improve it by implementing `foo`.
+```
