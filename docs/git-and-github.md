@@ -58,38 +58,66 @@ Fix conflicts and force push to YOUR BRANCH on Github.
 git push -f origin <BRANCH_NAME>
 ```
 
-*NEVER FORCE PUSH ANYTHING TO **MASTER**! IF YOU FEEL YOU MUST, TALK EXTENSIVELY TO REUBEN FIRST!*
+**Never force push anything to `MASTER`! If you feel you must, talk extensively to Reuben first!**
 
 ## Project Management
 
 ### Work Backlog
 
-You can find issues that are being worked at the [Nerevu Group Github Projects page](https://github.com/orgs/nerevu/projects). If you click on the project you are working on, you will find a Kanban Board with all the issues that need worked (many of them have milestones with due dates).
+You can find issues that are being worked at the [Nerevu Group Github Projects page](https://github.com/orgs/nerevu/projects). If you click on the project you are working on, you will find a Kanban Board with all the issues (some of them have milestones with due dates).
 
-### Keeping the Kanban Board up to date
+### Kanban Board
 
-When you start working on a new issue and you create a new branch, you should immediately do the following to keep the Kanban Board up to date:
+When you start working on a new issue, ensure you immediately do the following to keep the Kanban Board up to date:
 
-1. Commit your new branch to Github and add the words `(closes #{issue_number})` to the commit message. This will automatically close the corresponding issue in Github when you go to merge your code into master with a Pull Request (PR).
-   ![Closes](https://user.fm/files/v2-d3f896981e40c790ac8fc6cb66a3e627/closes.png)
+1. Create a [Pull Request (PR)](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) and select what `Project` it belongs to. This automatically adds your PR to the `In Progress` column on the Kanban Board. The `Assignees`, `Labels`, and `Milestone` sections are only needed for issues (the issue needs `Project` as well.
 
-2. Create a PR immediately in Github and choose what `Project` it belongs to. This automatically adds your PR to the `In Progress` column on the Kanban Board. The `Assignees`, `Labels`, and `Milestone` sections are only needed for issues (the issue needs `Project` as well (right hand side of the image below).
-   ![Projects](https://user.fm/files/v2-d3fe2b5084f7823c1c3fbe100fadfb3b/PR.png)
+2. Go to the Kanban Board for the respective project and move the related issue from the `To Do` column to the `In Progress` column.
 
-3. Go to the Kanban Board and move the correlated issue from the `To Do` column to the `In Progress` column.
-   ![Kanban Board](https://user.fm/files/v2-4f9e2e3d18c03a7e48898b33fc1cd24a/kanban.png)
+3. Once done fixing the issue, rebase to squash the work into one commit `git rebase -i` and add the words `(closes <ISSUE_NUMBER>)` to the commit message. This will automatically close the corresponding issue once your PR gets merged.
 
-4. Once your PR is merged into master, both the Issue and the PR in the Kanban Board should automatically be moved to the `Done` column.
+4. When your PR is merged into master, both the Issue and the PR in the Kanban Board will automatically move to the `Done` column.
 
 ## Misc
 
 ### Commit Messages
 
+Your commit message should adhere to the following:
+
+- be no more than 50 characters
+- give a descriptive summary of the work accomplished
+- begin with a present tense verb
+- use sentence case
+
+Examples:
+
+```text
+Remove unused attributes
+Refactor widgets
+Update models and db initialization
+```
+
 If your commit fits one of the following categories, add the appropriate prefix.
 
-- `[FIX]`: Fixes an existing bug
+- `[FIX]`: Fixes a bug
 - `[CHANGE]`: Changes existing behavior or external API
 - `[NEW]`: Adds new behavior
+
+Examples:
+
+```text
+[FIX] Set default cache timeout
+[NEW] Make number of months configurable
+[CHANGE] Update college data model
+```
+
+If your commit fixes an existing issue, add the suffix `(closes <ISSUE_NUMBER>)`.
+
+Example:
+
+```text
+Standardize number format (closes #10)
+```
 
 ### Commit Frequency
 
