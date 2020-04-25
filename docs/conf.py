@@ -65,5 +65,7 @@ html_theme_options = {
     'fixed_sidebar': True,
     'sidebar_width': '200px',
     'show_relbar_bottom': True,
-    'show_related': True
+    'show_related': True,
+    'github_user': 'nerevu',
+    'github_repo': 'handbook',
 }
