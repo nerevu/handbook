@@ -63,6 +63,7 @@ html_theme_options = {
     # 'touch_icon': 'alabaster',
     'description': 'Everything you need to excel at Nerevu',
     'fixed_sidebar': True,
+    'sidebar_width': '200px',
     'show_relbar_bottom': True,
     'show_related': True
 }
