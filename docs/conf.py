@@ -61,6 +61,7 @@ html_static_path = ['_static']
 html_theme_options = {
     # 'logo': 'logo.png',
     # 'touch_icon': 'alabaster',
+    'description': 'Everything you need to excel at Nerevu',
     'fixed_sidebar': True,
     'show_relbar_bottom': True,
     'show_related': True
