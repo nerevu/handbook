@@ -10,19 +10,19 @@ Add your work email address to github so that relevant notifications don't go to
 
 ## Basic Git Flow
 
-1. Clone repository
+Clone repository
 
 ```bash
 git clone https://github.com/nerevu/<REPO_NAME>.git
 ```
 
-2. Create a branch to add your fix/feature
+Create a branch to add your fix/feature
 
 ```bash
 git checkout -b <BRANCH_NAME>
 ```
 
-3. Prettify your code
+Prettify your code
 
 *Python*
 
@@ -36,7 +36,7 @@ manage prettify
 npm run prettify
 ```
 
-4. Push your commits to Github and create a [Pull Request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)
+Push your commits to Github and create a [Pull Request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)
 
 ```bash
 git commit -m "<COMMIT_MESSAGE>"
@@ -45,14 +45,14 @@ git push --set-upstream origin <BRANCH_NAME>
 
 *NOTE: As a general rule, don't merge code that purposefully raises errors and kills the application. Talk to Reuben about how to gracefully handle situations where you want to throw an error.*
 
-5. If master changes while you are fixing a pull request, rebase to master (please ask questions if you do not feel confident rebasing)
+If master changes while you are fixing a pull request, rebase to master (please ask questions if you do not feel confident rebasing)
 
 ```bash
 git fetch origin
 git rebase origin/master
 ```
 
-6. Fix conflicts and force push to YOUR BRANCH on Github.
+Fix conflicts and force push to YOUR BRANCH on Github.
 
 ```bash
 git push -f origin <BRANCH_NAME>
@@ -87,9 +87,9 @@ When you start working on a new issue and you create a new branch, you should im
 
 If your commit fits one of the following categories, add the appropriate prefix.
 
-- [FIX]: Fixes an existing bug
-- [CHANGE]: Changes existing behavior or external API
-- [NEW]: Adds new behavior
+- `[FIX]`: Fixes an existing bug
+- `[CHANGE]`: Changes existing behavior or external API
+- `[NEW]`: Adds new behavior
 
 ### Commit Frequency
 
@@ -108,4 +108,4 @@ There are several times that you should consider rebasing in Git.
 
 ### .gitignore File
 
-- don't commit `cache` folders and files (add them to the .gitignore)
+- don't commit `cache` folders and files (add them to `.gitignore`)

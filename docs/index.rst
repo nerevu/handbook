@@ -47,3 +47,8 @@ Complete Paperwork
 - Sign and return your Employment Agreement
 - `Schedule a time <https://booking.nerevu.com/call-60m>`_ for your orientation and ensure you have your passport (or drivers license and birth certificate) present for the meeting
 - Add a headshot image and a 1 paragraph biography to Dropbox
+
+Schedule Weekly Review
+~~~~~~~~~~~~~~~~~~~~~~
+
+- `Schedule a time <https://booking.nerevu.com/call-60m>`_ for your reoccurring weekly Monday review meeting
