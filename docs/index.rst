@@ -28,7 +28,7 @@ Access your new email account
 
 `Login to Fastmail <https://www.fastmail.com/login>`_ with the following information:
 
-- username: <YOUR_FIRST_INITIAL><YOUR_LAST_NAME>@nerevu.com, e.g., `rcummings@nerevu.com`
+- username: :code:`<YOUR_FIRST_INITIAL><YOUR_LAST_NAME>@nerevu.com`, e.g., :code:`rcummings@nerevu.com`
 - password: separately emailed to you
 
 Change your password
