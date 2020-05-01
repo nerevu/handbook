@@ -19,15 +19,14 @@ It's expected that you already do this each work morning for the previous work d
 
 ### Write progress report
 
-#### details
+#### Details
 
 * Due 5pm each Friday
 * To: rcummings@nerevu.com
 * Subject: Progress Update for week ending `MM-DD-YY`
 
-#### contents
+#### Contents
 
-```md
 # Accomplishments
 
 * Completed `foo` task

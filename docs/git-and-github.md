@@ -10,19 +10,21 @@ Add your work email address to github so that relevant notifications don't go to
 
 ## Basic Git Flow
 
-Clone repository
+When working with a Nerevu repository, it is important that you create your own branch for updates, fixes, or changes. When a change needs to be implemented, you simply commit and push your changes to your own branch and then submit a pull request to request merging your branch with origin. This prevents your changes from adversely affecting production code.
+
+1. Clone repository
 
 ```bash
 git clone https://github.com/nerevu/<REPO_NAME>.git
 ```
 
-Create a branch to add your fix/feature
+2. Create your branch to add your fix/feature
 
 ```bash
 git checkout -b <BRANCH_NAME>
 ```
 
-Prettify your code
+3. Prettify your code
 
 *Python*
 
@@ -36,7 +38,7 @@ manage prettify
 npm run prettify
 ```
 
-Push your commits to Github and create a [Pull Request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)
+4. Push your commits to Github and create a [Pull Request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)
 
 ```bash
 git commit -m "<COMMIT_MESSAGE>"
@@ -58,13 +60,15 @@ Fix conflicts and force push to YOUR BRANCH on Github.
 git push -f origin <BRANCH_NAME>
 ```
 
-**Never force push anything to `MASTER`! If you feel you must, talk extensively to Reuben first!**
+**Never force push anything to `MASTER`! If you feel you must, speak with Reuben in great detail first!**
+
 
 ## Project Management
 
 ### Work Backlog
 
 You can find issues that are being worked at the [Nerevu Group Github Projects page](https://github.com/orgs/nerevu/projects). If you click on the project you are working on, you will find a Kanban Board with all the issues (some of them have milestones with due dates).
+
 
 ### Kanban Board
 
@@ -77,6 +81,7 @@ When you start working on a new issue, ensure you immediately do the following t
 3. Once done fixing the issue, rebase to squash the work into one commit `git rebase -i` and add the words `(closes <ISSUE_NUMBER>)` to the commit message. This will automatically close the corresponding issue once your PR gets merged.
 
 4. When your PR is merged into master, both the Issue and the PR in the Kanban Board will automatically move to the `Done` column.
+
 
 ## Misc
 

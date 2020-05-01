@@ -55,7 +55,7 @@ We will go over how to setup both of these syncs.
 
 #### From Google Calendars
 
-See short video [here](https://user.fm/files/v2-2be5127a4a80f34fcf67ef8bfd5198f3/sync%20google%20calendar%20in%20fastmail.mp4)
+See this article on synchronizing Google Calendar with Fastmail [here](https://www.fastmail.com/help/calendar/sync.html).
 
 ## KeePass and Encrypted Volumes
 
