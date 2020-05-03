@@ -9,7 +9,7 @@ First, you need to give your user permissions to use a different key file to log
 1. Log into the AWS Console
 2. Search for `IAM` and click it
 3. Click `Groups`
-4. Click on `EC2InstanceConnect`
+4. Click on `admins`
 5. Click `Add Users to Group`
 6. Select your user and click `Add Users`
 
@@ -47,7 +47,7 @@ Now that you have the permissions, access the ec2 through an ssh client.
    ssh -i ./new_key ec2-user@{public_ip}
    ```
 
-5. Copy your public key into the ``~/.ssh/authorized_keys` file on a new line. This allows you to access the instance whenever you need.
+5. Copy your public key into the `~/.ssh/authorized_keys` file on a new line. This allows you to access the instance whenever you need.
 
    *I opened my public key file in a text editor (notepad) and copied it from there with Ctrl+C.*
 
