@@ -52,3 +52,11 @@ Schedule Weekly Review
 ~~~~~~~~~~~~~~~~~~~~~~
 
 - `Schedule a time <https://booking.nerevu.com/call-60m>`_ for your reoccurring weekly Monday review meeting
+
+AWS Help
+~~~~~~~~
+
+By default, Nerevu Group's EC2 instances are in the N. Virginia region.
+
+- To get access to EC2 instances via SSH, `go here <https://handbook.nerevu.com/ec2-instance-connect.html>`_
+- To learn about upgrading your CKAN EC2 instance, `go here <https://handbook.nerevu.com/upgrade-ckan-instance.html>`_
