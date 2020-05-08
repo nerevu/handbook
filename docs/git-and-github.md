@@ -62,13 +62,11 @@ git push -f origin <BRANCH_NAME>
 
 **Never force push anything to `MASTER`! If you feel you must, speak with Reuben in great detail first!**
 
-
 ## Project Management
 
 ### Work Backlog
 
 You can find issues that are being worked at the [Nerevu Group Github Projects page](https://github.com/orgs/nerevu/projects). If you click on the project you are working on, you will find a Kanban Board with all the issues (some of them have milestones with due dates).
-
 
 ### Kanban Board
 
@@ -81,7 +79,6 @@ When you start working on a new issue, ensure you immediately do the following t
 3. Once done fixing the issue, rebase to squash the work into one commit `git rebase -i` and add the words `(closes <ISSUE_NUMBER>)` to the commit message. This will automatically close the corresponding issue once your PR gets merged.
 
 4. When your PR is merged into master, both the Issue and the PR in the Kanban Board will automatically move to the `Done` column.
-
 
 ## Misc
 
