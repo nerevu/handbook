@@ -136,6 +136,29 @@ There are several times that you should consider rebasing in Git.
 2. When you make a change that a reviewer requested in a PR.
 3. Any other time that makes sense (you'll learn this over time)
 
+### How to Rebase
+
+Rebasing is necessary whenever history needs to be changed. This can be for changing commit messages or for changing the order and contents of commits. For example, if you want to change commit messages follow these steps:
+
+1. Run `git rebase -i master`
+2. Change the `pick` field to `edit` next to the commit you intend to change
+3. Save the file
+4. Run `git rebase --continue`
+5. This will reopen the rebase file where you can change the commit text and exit to save
+
+Similarly, you can edit the contents of the files themselves when under edit mode. After step 2 above, the local file system will reflec the changes of the selected commit. Here you can change the files using a text editor and then recommit them like so:
+
+1. Run `git rebase -i master`
+2. Change the pick field to `edit`
+3. Make changes to the file system
+4. Run `git status` to see edited files
+5. Run `git add .` followed by `git commit --ammend`
+6. Complete the rebase using `git rebase --continue`
+
+This will effectively change the edits included in that specific commit.
+
+On the other hand, if you want to erase a commit entirely you can simply comment out the commits you wish to erase using `#` and then continue the rebase. This will edit the commit history to erase any commits you erase.
+
 ### .gitignore File
 
 - don't commit `cache` folders and files (add them to `.gitignore`)
