@@ -30,9 +30,9 @@ Certbot is a tool that helps you issue and renew TLS certificates for free. We w
 
 4. Change the first box to `Nginx` and the second to `CentOS/RHEL 7`.
 
-5. Scroll down and follow the `default` instructions.
+5. Scroll down and follow the `default` instructions. Be sure to do the final step as well which automates the renewal of certificates.
 
-   - If you are having trouble installing EPEL, follow the instructions in [this tutorial](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-amazon-linux-2.html#prepare) (only step #1).
+   - To install EPEL, follow the instructions in [this tutorial (only step #1)](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-amazon-linux-2.html#prepare). This worked better for me than the Certbot instructions.
 
    - When you get to the installation section, run the `certonly` option. This will allow us to configure our web servers the way we want.
 
@@ -55,8 +55,7 @@ Now we need to configure our Nginx and Apache servers to work with HTTPS.
    sudo vim /etc/nginx/conf.d/ckan.conf
    ```
 
-2. We will need to add the following rule to listen for HTTPS traffic.
-
+2. We will need to remove the existing server block and add the following server block rule to listen for HTTPS traffic.
    ```nginx
    server {
        listen 443;
@@ -97,7 +96,7 @@ Now we need to configure our Nginx and Apache servers to work with HTTPS.
 4. Restart your Nginx server.
 
    ```bash
-   sudo systemctl start nginx
+   sudo systemctl restart nginx
    ```
 
 ### Edit Your Apache Config File
@@ -119,13 +118,20 @@ If `mod_ssl` is installed on Apache, you will have an `/etc/httpd/conf.d/ssl.con
 
    Save and exit.
 
-3. Restart your Apache server.
+3. Comment out the `mod_http2` section of your `/etc/httpd/conf/httpd.conf` file.
+   ```bash
+   # <IfModule mod_http2.c>
+   #    Protocols h2 h2c http/1.1
+   # </IfModule>
+   ```
+
+4. Restart your Apache server.
 
    ```bash
    sudo systemctl start httpd
    ```
 
-4. If you are having trouble restarting your server, check the config file by running `apachectl configtest` from the command line. Don't worry if you get an `SSLCertificateFile does not exist` error. Apache isn't handling HTTPS, so we don't need to worry about this.
+5. If you are having trouble restarting your server, check the config file by running `apachectl configtest` from the command line. Don't worry if you get an `SSLCertificateFile does not exist` error. Apache isn't handling HTTPS, so we don't need to worry about this.
 
 ### Edit your CKAN Installation
 
