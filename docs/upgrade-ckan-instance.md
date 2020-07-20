@@ -246,3 +246,15 @@ If you don't have access to key-pair for the old or new machine, [follow these i
 - [ ] Check that the promoted-image on the [main page](http://openpeoria.nerevu.com) is present.
 - [ ] Check that all [ckan users](http://openpeoria.nerevu.com/user/) are still present.
 - [ ] Check that all [ckan datasets](http://openpeoria.nerevu.com/dataset) are still present.
+
+## Setup CodeDeploy
+- First, you will need to move the `production.ini` to the main CKAN codebase directory and create a symlink to it in the original directory. This is so that you will be able to directly edit the production.ini without having to ssh into the EC2 instance.
+    ```bash
+    sudo mv /etc/ckan/default/production.ini /lib/ckan/default/src/ckan/
+
+    sudo ln -s /lib/ckan/default/src/ckan/production.ini /etc/ckan/default/production.ini
+    ```
+- **The rest of the CodeDeploy instructions will come at a later date (when we finish the setup). You can view [this Github Issue](https://github.com/openpeoria/AWS-CKAN/issues/7) for details on progress.**
+
+## Configure HTTPS on the server
+- See [this article](https://handbook.nerevu.com/ckan-https.html).
