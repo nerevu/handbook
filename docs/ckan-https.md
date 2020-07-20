@@ -13,9 +13,22 @@ CKAN uses an Nginx server as a reverse proxy to an Apache server. This means tha
   - **Apache Web Server** - Server version: Apache/2.4.41 ()
   - **CKAN** - CKAN 2.8.3 (2020-03-13) delivered by Link Digital (AWS Marketplace)
 
+### Add an Acme Challenge to your DNS
+Before you can get a certificate to use HTTPS, you need to verify that you are in control of the domain that you are trying to get a certificate for.
+
+To do this, you will need to complete either an `HTTPS Challenge` or a `DNS Challenge`. We did the [DNS Challenge](https://letsencrypt.org/docs/challenge-types/#dns-01-challenge). An [HTTP Challenge](https://letsencrypt.org/docs/challenge-types/#http-01-challenge) should work fine as well and might make more sense to implement if you understand what [this article](https://letsencrypt.org/docs/challenge-types/) is asking you to do.
+
+For the DNS Challenge, you will need to create a `TXT` record with an Acme challenge.
+
+Add a `TXT` record to your hosting service with a key of `_acme-challenge.{your_live_site}` and a value of `Op6S2FCJ720AGVJGnYg4Hs00mCiUdm-bxg9Tcsgh1zE`.
+
+![img](../assets/txt_record.png)
+
+You should now be prepared to issue a certificate for HTTPS!
+
 ## Set up Certbot on your EC2 instance
 
-Certbot is a tool that helps you issue and renew TLS certificates for free. We will be using this to configure our https certificates. Our CKAN instance is hosted on an Amazon Linux 2 AMI, which is most closely related to Centos Linux distributions. To get Certbot working on your EC2 instance, do the following:
+Certbot is a tool that works with LetsEncrypt to help you issue and renew TLS certificates for free. We will be using this to configure our https certificates. Our CKAN instance is hosted on an Amazon Linux 2 AMI, which is most closely related to Centos Linux distributions. To get Certbot working on your EC2 instance, do the following:
 
 1. Your servers shouldn't be running while getting a certificate.
 
@@ -39,6 +52,8 @@ Certbot is a tool that helps you issue and renew TLS certificates for free. We w
      ```bash
      sudo certbot certonly --nginx
      ```
+
+        **IMPORTANT**: When you get to [this section](https://handbook.nerevu.com/ckan-https.html#set-up-certbot-on-your-ec2-instance) that has you put a `cron` job in your crontab to update your SSL certificate automatically, be sure to delete the other cron job that is updating the old SSL certificate.
 
 6. You should get a confirmation that your certificates have been downloaded, with a path to the `fullchain.pem` and `privkey.pem` file locations. Put these file paths somewhere you can access them easily for the next steps.
 
