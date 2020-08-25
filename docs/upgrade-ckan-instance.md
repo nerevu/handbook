@@ -144,7 +144,7 @@ If you don't have access to key-pair for the old or new machine, [follow these i
 
 4. Link to `promoted-image.jpg` in the html snippet containing the promoted image code.
     ```bash
-    sudo vim /lib/ckan/default/src/ckan/ckan/templates/home/snippets/promoted.html
+    sudo nano /lib/ckan/default/src/ckan/ckan/templates/home/snippets/promoted.html
     ```
     ```html
     <!-- add the path to promoted-image.jpg -->
@@ -192,7 +192,7 @@ If you don't have access to key-pair for the old or new machine, [follow these i
 
 4. add the extension name to the end of the plugins variable in the CKAN config file
     ```bash
-    sudo vim /etc/ckan/default/production.ini
+    sudo nano /etc/ckan/default/production.ini
     ```
     ```ini
     ckan.plugins = stats text_view image_view recline_view datastore datapusher resource_proxy geo_view pages harvest ckan_harvester apihelper

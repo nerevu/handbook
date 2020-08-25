@@ -15,7 +15,7 @@
 - SSH into your CKAN EC2 instance.
 - Open the `production.ini` file and change the `ckan.site_url` variable.
   ```bash
-  sudo vim /lib/ckan/default/src/ckan/production.ini
+  sudo nano /lib/ckan/default/src/ckan/production.ini
   ```
   ```ini
   ckan.site_url = {your_live_site}

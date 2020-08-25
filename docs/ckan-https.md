@@ -67,7 +67,7 @@ Now we need to configure our Nginx and Apache servers to work with HTTPS.
 1. Edit the `/etc/nginx/conf.d/ckan.conf` file.
 
    ```bash
-   sudo vim /etc/nginx/conf.d/ckan.conf
+   sudo nano /etc/nginx/conf.d/ckan.conf
    ```
 
 2. We will need to remove the existing server block and add the following server block rule to listen for HTTPS traffic.
@@ -121,7 +121,7 @@ If `mod_ssl` is installed on Apache, you will have an `/etc/httpd/conf.d/ssl.con
 1. Open an editor for `/etc/httpd/conf.d/ssl.conf`.
 
    ```bash
-   sudo vim /etc/httpd/conf.d/ssl.conf
+   sudo nano /etc/httpd/conf.d/ssl.conf
    ```
 
 2. Remove the HTTPS listener

@@ -20,7 +20,7 @@ For either scenario, you will need to generate a new private/public key-pair set
 5. Open your public key (`new_key.pub`) in Notepad (or another editor) and copy it to your clipboard.
 6. Add your public key the `authorized_keys` file.
    ```bash
-   sudo vim ~/.ssh/authorized_keys
+   sudo nano ~/.ssh/authorized_keys
 
    # Paste the public key on a new line, then save the file.
    ```
