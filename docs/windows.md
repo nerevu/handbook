@@ -78,4 +78,4 @@ Use Veracrypt to create an Encrypted Volume
 
 - follow the beginners tutorial [here](https://www.veracrypt.fr/en/Beginner%27s%20Tutorial.html)
 - add the password to your personal Keepass Database so you don't forget it
-    ![Add a password in Keepass](https://user.fm/files/v2-3212126b246b39151303f4333b83b43b/add_password.PNG)
+    ![Add a password in Keepass](../assets/add_password.PNG)
