@@ -103,14 +103,18 @@ If your commit fits one of the following categories, add the appropriate prefix.
 
 - `[FIX]`: Fixes a bug
 - `[CHANGE]`: Changes existing behavior or external API
+- `[ENH]`: Enhances existing behavior
 - `[NEW]`: Adds new behavior
+- `[CVE]`: Patches a security vulnerability
 
 Examples:
 
 ```text
 [FIX] Set default cache timeout
-[NEW] Make number of months configurable
 [CHANGE] Update college data model
+[ENH] Optimize data fetching
+[NEW] Make number of months configurable
+[CVE] Patches elliptic CVE-2020-13822
 ```
 
 If your commit fixes an existing issue, add the suffix `(closes <ISSUE_NUMBER>)`.
@@ -118,7 +122,7 @@ If your commit fixes an existing issue, add the suffix `(closes <ISSUE_NUMBER>)`
 Example:
 
 ```text
-Standardize number format (closes #10)
+[ENH] Standardize number format (closes #10)
 ```
 
 ### Commit Frequency
