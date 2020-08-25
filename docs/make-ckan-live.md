@@ -32,7 +32,7 @@
 
 ## Configure HTTPS
 
-Follow [these instructions](https://handbook.nerevu.com/ckan-https.html) for setting up https.
+Follow [these instructions](ckan-https) for setting up https.
 
 ## Conclusion
 

@@ -16,6 +16,7 @@ Welcome to the Nerevu Employee Handbook!
    code-style
    new-projects
    resources
+   ckan
    misc
 
 Your First Week at Nerevu
@@ -57,8 +58,4 @@ AWS Help
 ~~~~~~~~
 
 By default, Nerevu Group's EC2 instances are in the N. Virginia region.
-
-- To get access to EC2 instances via SSH, `go here <https://handbook.nerevu.com/ec2-instance-connect.html>`_
-- To learn about upgrading your CKAN EC2 instance, `go here <https://handbook.nerevu.com/upgrade-ckan-instance.html>`_
-- To get https installed for CKAN on your EC2 instance, `go here <https://handbook.nerevu.com/ckan-https.html>`_
-- For making your CKAN instance live, `go here <https://handbook.nerevu.com/make-ckan-live.html>`_
+To get access to EC2 instances via SSH, `go here <ec2-instance-connect>`_.

@@ -15,14 +15,17 @@ If you don't have access to key-pair for the old or new machine, [follow these i
 
 
 ## Restore databases from the old to the new instance
+
 1. Export the `ckan_default` and `datastore_default` PostgreSQL databases using [pg_dump](https://www.postgresqltutorial.com/postgresql-backup-database/). When prompted for the password, use the the postgres user's password that was previously set. You can find this password in the `mpsotto.kdbx` KeePassXC database under the `AWS CKAN` folder.
+
     ```bash
     pg_dump -U postgres -W -F t ckan_default > ~/ckan_default_dump.tar
 
     pg_dump -U postgres -W -F t datastore_default > ~/datastore_default_dump.tar
     ```
 
-2.  Copy the dump files from the old machine to your new machine (don't forget to change the IP addresses and private keys below)
+2. Copy the dump files from the old machine to your new machine (don't forget to change the IP addresses and private keys below)
+
     ```bash
     # RUN THE FOLLOWING COMMANDS FROM YOUR LOCAL MACHINE
     ###################################################
@@ -88,10 +91,11 @@ If you don't have access to key-pair for the old or new machine, [follow these i
 
 
 ## Move the Filestore
-1. In the old instance, if you have enabled the CKAN filestore, copy it's directory to your home folder.
-    - If you're unsure, check `/etc/ckan/default/production.ini` for the `ckan.storage_path` variable to see if it is set. Copy that directory if it is present.
+
+1. In the old instance, if you have enabled the CKAN filestore, copy it's directory to your home folder. (If you're unsure, check `/etc/ckan/default/production.ini` for the `ckan.storage_path` variable to see if it is set. Copy that directory if it is present.)
 
 2. Copy the filestore to your new machine (don't forget to change the IP addresses and private keys below)
+
     ```bash
     # RUN THE FOLLOWING COMMAND FROM YOUR LOCAL MACHINE
     ###################################################
@@ -105,6 +109,7 @@ If you don't have access to key-pair for the old or new machine, [follow these i
     *Learn more about the `scp` command [here.](https://medium.com/dev-blogs/transferring-files-between-remote-server-and-local-system-133d78d58137)*
 
 3. Extract the filestore archive to the same location on the new instance and set the `ckan.storage_path` value appropriately within the `/etc/ckan/default/production.ini` file. If it is the same name, you don't need to worry about changing the storage_path variable.
+
     ```bash
     # remove the existing filestore
     sudo rm -rf /var/shared_storage/ckan
@@ -112,19 +117,24 @@ If you don't have access to key-pair for the old or new machine, [follow these i
     # replace with the old filestore
     sudo mv ~/ckan/ /var/shared_storage/
     ```
+
 4. Set the ckan folder's permissions to `apache:apache` (otherwise datasets won't be able to be added)
+
     ```bash
     sudo -u root chown -R apache:apache /var/shared_storage/ckan/
     ```
 
 
 ## Move the Promoted Image
+
 1. In the old instance, copy the promoted image to your home directory.
+
     ```bash
     sudo cp /lib/ckan/default/src/ckan/ckan/public/base/images/promoted-image.jpg ~/
     ```
 
 2. Copy the promoted image to your new machine (don't forget to change the IP addresses and private keys below)
+
     ```bash
     # RUN THE FOLLOWING COMMAND FROM YOUR LOCAL MACHINE
     ###################################################
@@ -138,14 +148,17 @@ If you don't have access to key-pair for the old or new machine, [follow these i
     *Learn more about the `scp` command [here.](https://medium.com/dev-blogs/transferring-files-between-remote-server-and-local-system-133d78d58137)*
 
 3. Move the promoted image to the images directory
+
     ```bash
     sudo mv ~/promoted-image.jpg /lib/ckan/default/src/ckan/ckan/public/base/images/
     ```
 
 4. Link to `promoted-image.jpg` in the html snippet containing the promoted image code.
+
     ```bash
     sudo nano /lib/ckan/default/src/ckan/ckan/templates/home/snippets/promoted.html
     ```
+
     ```html
     <!-- add the path to promoted-image.jpg -->
     <img src="{{ h.url_for_static('/base/images/promoted-image.jpg') }}" />
@@ -153,7 +166,9 @@ If you don't have access to key-pair for the old or new machine, [follow these i
 
 
 ## Move any installed extensions
+
 1. Check your old and new ckan instances to see what extensions need to be transferred.
+
     ```bash
     # anything with ckanext- in the directory name is an extension
 
@@ -167,12 +182,15 @@ If you don't have access to key-pair for the old or new machine, [follow these i
     ls /lib/ckan/default/src/
     ... ckan  ckanext-harvest  ckanext-pages
     ```
+
     Assuming your two directories looked like the two above, you would need to copy the `ckanext-apihelper` extension to your home folder. You will place this in the same spot in your new instance.
+
     ```bash
     sudo cp -R /lib/ckan/default/src/ckanext-apihelper ~/
     ```
 
 2. Copy the extensions to your new machine (don't forget to change the IP addresses and private keys below)
+
     ```bash
     # RUN THE FOLLOWING COMMAND FROM YOUR LOCAL MACHINE
     ###################################################
@@ -186,21 +204,26 @@ If you don't have access to key-pair for the old or new machine, [follow these i
     *Learn more about the `scp` command [here.](https://medium.com/dev-blogs/transferring-files-between-remote-server-and-local-system-133d78d58137)*
 
 3. Move the extensions to the proper directory
+
     ```bash
     sudo mv -R ~/ckanext-{extension_name} /lib/ckan/default/src/
     ```
 
 4. add the extension name to the end of the plugins variable in the CKAN config file
+
     ```bash
     sudo nano /etc/ckan/default/production.ini
     ```
+
     ```ini
     ckan.plugins = stats text_view image_view recline_view datastore datapusher resource_proxy geo_view pages harvest ckan_harvester apihelper
     ```
 
 
 ## Final Steps
+
 1. Perform a Solr re-index so the new Solr service contains records of the newly imported data. Use the commands below:
+
     ```bash
     # activate the python virtualenv and go to the ckan directory
     . /usr/lib/ckan/default/bin/activate
@@ -211,6 +234,7 @@ If you don't have access to key-pair for the old or new machine, [follow these i
     ```
 
 2. Disassociate the Elastic IP Address from the old instance and Associate it with the new instance.
+
     - View your running instances on AWS. Remember the Elastic IP address (copy and paste it somewhere so you don't forget it).
 
         ![Elastic IP](../assets/IPlocation.png)
@@ -228,33 +252,41 @@ If you don't have access to key-pair for the old or new machine, [follow these i
         ![Associate EIP](../assets/AssociateEIP.png)
 
     - Select `Instance`, then click into the instance input field and select the new instance.
+
     - Click into the Private IP input field and select the Private IP of the instance (there will likely only be one option).
+
     - Click `Associate`.
 
         ![Final Associate EIP Option](../assets/FinalAssociateEIP.png)
 
-3. Follow [these instructions](https://handbook.nerevu.com/ckan-https.html) to configure HTTPS on the server.
+3. Follow [these instructions](ckan-https) to configure HTTPS on the server.
 
 4. Restart the Nginx and Apache servers if you didn't already in the HTTPS setup.
+
     ```bash
     sudo systemctl restart nginx
-    sudo systemctl restart httpd  # apache
+    sudo systemctl restart httpd
     ```
 
 
 ## Check that data was transferred correctly
-- [ ] Check that the promoted-image on the [main page](http://openpeoria.nerevu.com) is present.
-- [ ] Check that all [ckan users](http://openpeoria.nerevu.com/user/) are still present.
-- [ ] Check that all [ckan datasets](http://openpeoria.nerevu.com/dataset) are still present.
+
+- [ ] Check that the promoted-image on the [main page](http://data.openpeoria.com) is present.
+- [ ] Check that all [ckan users](http://data.openpeoria.com/user/) are still present.
+- [ ] Check that all [ckan datasets](http://data.openpeoria.com/dataset) are still present.
 
 ## Setup CodeDeploy
+
 - First, you will need to move the `production.ini` to the main CKAN codebase directory and create a symlink to it in the original directory. This is so that you will be able to directly edit the production.ini without having to ssh into the EC2 instance.
+
     ```bash
     sudo mv /etc/ckan/default/production.ini /lib/ckan/default/src/ckan/
 
     sudo ln -s /lib/ckan/default/src/ckan/production.ini /etc/ckan/default/production.ini
     ```
+
 - **The rest of the CodeDeploy instructions will come at a later date (when we finish the setup). You can view [this Github Issue](https://github.com/openpeoria/AWS-CKAN/issues/7) for details on progress.**
 
 ## Configure HTTPS on the server
-- See [this article](https://handbook.nerevu.com/ckan-https.html).
+
+- [Read here](ckan-https)
