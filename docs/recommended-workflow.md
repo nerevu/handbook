@@ -23,7 +23,7 @@ It's expected that you already do this each work morning for the previous work d
 
 * Due 5pm each Friday
 * To: rcummings@nerevu.com
-* Subject: Progress Update for week ending `MM-DD-YY`
+* Subject: Progress Update for week ending `MM/DD/YY`
 
 #### Contents
 
